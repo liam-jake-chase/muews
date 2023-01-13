@@ -1,0 +1,25 @@
+html,
+body {
+  background-image: url("./../../assets/images/hero-image2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero {
+  &__search {
+    width: 28%;
+    height: 3rem;
+    border: lightblue solid 0.25rem;
+    opacity: 0.8;
+    border-radius: 1rem;
+    font-size: large;
+    text-align: center;
+  }
+
+  &__image {
+    position: relative;
+    top: 19.5rem;
+  }
+}
