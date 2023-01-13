@@ -4,17 +4,15 @@ export interface Tab {
   }
   
   export const allTabs = [
-    { icon: "", label: "Tomato" },
-    { icon: "", label: "Lettuce" },
-    { icon: "", label: "Cheese" },
-    { icon: "", label: "Carrot" },
-    { icon: "", label: "Banana" },
-    { icon: "", label: "Blueberries" },
-    { icon: "", label: "Champers?" }
+    { icon: "", label: "Profile" },
+    { icon: "", label: "Releases" },
+    { icon: "", label: "Events" },
+    { icon: "", label: "Gallery" },
+    { icon: "", label: "Social Media" },
   ];
   
-  const [tomato, lettuce, cheese] = allTabs;
-  export const initialTabs = [tomato, lettuce, cheese];
+  const [Profile, Releases, Events, Gallery, SocialMedia] = allTabs;
+  export const initialTabs = [Profile, Releases, Events, Gallery, SocialMedia];
   
   export function getNextTab(
     tabs: Tab[]

@@ -8,8 +8,12 @@ import ResultsTabsCard from '../ResultsTabsCard/ResultsTabsCard';
 export default function ResultsPage() {
   return (
     <motion.div>
-         <div className='main'>
-             <div className='main__container'>
+         <div className='results'>
+             <div className='results__container'>
+
+                 <div className='results__tabs-card-container'>
+
+                 </div>
                  <ResultsTabsCard />
              </div>
          </div>
