@@ -1,10 +1,11 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
 import axios from "axios";
 import Modal from "react-awesome-modal";
+import { ArtistContext } from "./context/ArtistContext";
 
 function App() {
   const [redirect, setRedirect] = useState(false);
@@ -13,8 +14,7 @@ function App() {
   const [artistReleases, setArtistReleases] = useState([]);
   const [artistVideos, setArtistVideos] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [tabIndex, setTabIndex] = useState(0);
-  const [discogs, setDiscogs] = useState([]);
+  const [discogs, setDiscogs] = useContext(ArtistContext);
 
   const openModal = () => {
     setVisible(true);
@@ -24,8 +24,8 @@ function App() {
     setVisible(false);
   };
 
-  let getData = () => {
-    axios
+  let getData = async () => {
+    await axios
       .get(
         `https://www.theaudiodb.com/api/v1/json/523532/search.php?s=${searchName}`
       )
@@ -38,14 +38,14 @@ function App() {
           setArtistInfo(response.data.artists[0]);
         }
         let num = response.data.artists[0].idArtist;
-        let getRelease = () => {
-          axios
+        let getRelease = async () => {
+          await axios
             .get(`https://theaudiodb.com/api/v1/json/523532/album.php?i=${num}`)
             .then((response) => {
               console.log(response);
               setArtistReleases(response.data.album);
               let getVideo = async () => {
-                axios
+                await axios
                   .get(
                     `https://theaudiodb.com/api/v1/json/523532/mvid.php?i=${num}`
                   )
@@ -59,27 +59,29 @@ function App() {
                           "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU",
                       },
                     };
-                    let discogs = () => {
-                      axios
+                    let discogs = async () => {
+                      await axios
                         .get(
                           `https://api.discogs.com/database/search?q=${searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`
                         )
                         .then((response) => {
                           let artistName = response.data.results[0].id;
-                          let idSearch = () => {
-                            axios
+                          let idSearch = async () => {
+                            await axios
                               .get(
                                 `https://api.discogs.com/artists/${artistName}`,
                                 access
                               )
                               .then((response) => {
-                                setDiscogs(response);
+                                console.log(response.data.members);
+                                setDiscogs(response.data.members);
                               });
                           };
                           idSearch();
                         });
-                      };
-                    });
+                    };
+                    discogs();
+                  });
               };
               getVideo();
             });
@@ -96,8 +98,9 @@ function App() {
     e.preventDefault();
     getData();
     setRedirect(true);
-    setTabIndex(0);
   };
+
+  console.log(discogs);
 
   return (
     <div className="App">
@@ -132,9 +135,7 @@ function App() {
           />
           <Route
             path="/ResultsPage"
-            element={
-              <ResultsPage artistInfo={artistInfo} tabIndex={tabIndex} />
-            }
+            element={<ResultsPage artistInfo={artistInfo} discogs={discogs} />}
           />
         </Routes>
       </BrowserRouter>

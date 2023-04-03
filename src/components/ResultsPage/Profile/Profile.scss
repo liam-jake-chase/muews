@@ -1,15 +1,58 @@
+@import '../../../partials/mixins';
 
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .profile {
+  height: 60%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+      height: 72vh;
+  }
 
-    height: 25rem;
+  &__biography {
+    color: whitesmoke;
+    text-align: left;
     overflow: scroll;
+    margin: 2rem 1rem 1rem 1rem;
+  }
 
+  &__bandinfo {
+    
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    margin: 1.5rem auto;
+    flex-wrap: wrap;
+  }
 
-    &__biography {
-        color: whitesmoke;
-        text-align: left;
-        overflow: scroll;
-        
-    }
+  &__memberlist {
+      color: whitesmoke;
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      color: whitesmoke;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include tablet {
+          flex-direction: row;
+          margin-bottom: 0;
+      }
+      
+  }
+
+  &__member {
+    background: none;
+    margin: 0 auto;
+    margin-left: auto;
+      margin-right: auto;
+  }
 }

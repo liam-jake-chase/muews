@@ -10,11 +10,11 @@ body {
 .results {
   &__container {
     position: absolute;
-    top: 1rem;
-    bottom: 1rem;
-    right: 1rem;
-    left: 1rem;
-    border: rgb(96, 116, 231) solid 0.5rem;
+    top: .5rem;
+    bottom: .5rem;
+    right: .25rem;
+    left: .25rem;
+    border: rgb(73, 83, 141) solid 0.5rem;
     border-radius: 1rem;
     background-color: rgb(0, 0, 0);
     opacity: 0.8;
@@ -23,5 +23,7 @@ body {
   &__banner {
     height: auto;
     width: 100%;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
   }
 }

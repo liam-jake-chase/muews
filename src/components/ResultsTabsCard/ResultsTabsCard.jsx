@@ -5,10 +5,9 @@ import "react-tabs/style/react-tabs.css";
 import Profile from "../ResultsPage/Profile/Profile";
 
 export default function ResultsTabsCard(props) {
-
   return (
-    <div className="resultstabscard">
-      <Tabs defaultIndex={[0]}> 
+    <>
+      <Tabs>
         <TabList>
           <Tab>Profile</Tab>
           <Tab>Releases</Tab>
@@ -18,15 +17,13 @@ export default function ResultsTabsCard(props) {
         </TabList>
 
         <TabPanel>
-          <Profile 
-          artistInfo={props.artistInfo}
-          />
+          <Profile artistInfo={props.artistInfo} />
         </TabPanel>
         <TabPanel>Releases</TabPanel>
         <TabPanel>Events </TabPanel>
         <TabPanel>Pictures & Videos</TabPanel>
         <TabPanel>Social Media</TabPanel>
       </Tabs>
-    </div>
+    </>
   );
 }
