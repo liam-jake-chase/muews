@@ -4,7 +4,6 @@ body,
 html {
   padding: 0;
   margin: 0;
-  height: 100vh;
 }
 
 .profile {
@@ -13,36 +12,33 @@ html {
   margin: auto;
   flex-direction: column;
 
-  @include tablet {
-    height: 72vh;
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
   }
 
   &__bandinfo {
     display: flex;
     flex-direction: column;
-    height: 20%;
-    margin: auto;
-    flex-wrap: wrap;
     color: whitesmoke;
-    
 
     @include desktop {
-        height: 10rem;
+    }
+  }
+
+  &__container {
+    @include desktop {
+     display: flex;
+     flex-direction: column;
     }
   }
 
   &__memberlist {
     color: whitesmoke;
+    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: black;
-    color: whitesmoke;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: 20%;
 
     @include tablet {
       flex-direction: row;
@@ -52,10 +48,25 @@ html {
 
   &__member {
     background: none;
- 
     margin-left: auto;
     margin-right: auto;
-    font-size: .75rem;
+    font-size: 0.75rem;
+  }
+
+  &__imagelist {
+    
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+    }
+  }
+
+  &__image {
+    height: 4rem;
+    border-radius: .5rem;
   }
 
   &__header {
@@ -66,16 +77,10 @@ html {
     color: whitesmoke;
     text-align: left;
     overflow-y: scroll;
-    margin: 1rem .5rem 1rem .5rem;
-    height: 32rem;
-    font-size: .75rem;
-    @include tablet {
-        height: 38rem;
-        font-size: .92rem;
-        margin-bottom: 0;
-    }
+    margin: 1rem 0.5rem 1rem 0.5rem;
+
     @include desktop {
-        height: 21rem;
+      margin: 1rem;
     }
   }
 }

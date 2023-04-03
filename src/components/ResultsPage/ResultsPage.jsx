@@ -1,12 +1,12 @@
 import React from "react";
 import "./ResultsPage.scss";
-import { motion } from "framer-motion";
-import ResultsTabsCard from "../ResultsTabsCard/ResultsTabsCard";
+import Profile from "./Profile/Profile";
+import FooterNav from "./FooterNav/FooterNav";
+
 
 export default function ResultsPage(props) {
 
-  return (
-    <motion.div>
+  return (  
       <div className="results">
         <div className="results__container">
           <img
@@ -15,13 +15,16 @@ export default function ResultsPage(props) {
             alt="main-banner"
           />
           <div className="results__tabs-card-container">
-            <ResultsTabsCard
+            <Profile
               artistInfo={props.artistInfo}
-           
+              discogs={props.discogs}
             />
           </div>
+          <footer className="results__footer-nav">
+            <FooterNav />
+          </footer>
         </div>
       </div>
-    </motion.div>
+
   );
 }

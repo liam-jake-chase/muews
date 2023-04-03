@@ -1,23 +1,35 @@
-import React, { useContext } from "react";
-import { ArtistContext } from "../../../context/ArtistContext";
+import React from "react";
 import "./Profile.scss";
 
 export default function Profile(props) {
-  const [discogs] = useContext(ArtistContext);
   return (
     <>
       <div className="profile">
-        <div className="profile__header">BIOGRAPHY</div>
+        <h1 className="profile__header">BIOGRAPHY</h1>
         <div className="profile__biography">
           {props.artistInfo.strBiographyEN}
         </div>
         <div className="profile__bandinfo">
-          BAND MEMBERS
-          <ul className="profile__memberlist">
-            {discogs.map((member) => {
-              return <li className="profile__member">{member.name}</li>;
-            })}
-          </ul>
+          <h2 className="profile__header">BAND MEMBERS</h2>
+
+          <div className="profile__container">
+            {/* <ul className="profile__memberlist">
+              {props.discogs.map((member) => {
+                return <li className="profile__member">{member.name}</li>;
+              })}
+            </ul> */}
+            <ul className="profile__imagelist">
+              {props.discogs.map((image) => {
+                return (
+                  <img
+                    className="profile__image"
+                    src={image.thumbnail_url}
+                    alt="member-thumb"
+                  />
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </>

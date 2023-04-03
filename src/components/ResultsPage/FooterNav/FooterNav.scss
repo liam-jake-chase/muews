@@ -1,0 +1,41 @@
+@import '../../../partials/mixins';
+
+.footer {
+
+    &__nav {
+        background-color: none;
+        @include desktop {
+            position: absolute;
+            bottom: -1rem;
+            
+            width: 100%;
+            border-bottom-left-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+            opacity: 80%;
+            
+        }
+    }
+
+    &__ul {
+
+        @include desktop {
+            display: flex;
+            justify-content: space-evenly;
+            color: white;
+            list-style: none;
+            background-color: rgb(41, 52, 77);
+            opacity: 90%;
+
+        }
+    }
+
+    &__li {
+
+        @include desktop {
+            border: solid 1px whitesmoke;
+            border-radius: 1rem;
+            padding: 1rem 4rem;
+            
+        }
+    }
+}

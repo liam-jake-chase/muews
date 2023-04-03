@@ -1,11 +1,10 @@
 import "./App.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
 import axios from "axios";
 import Modal from "react-awesome-modal";
-import { ArtistContext } from "./context/ArtistContext";
 
 function App() {
   const [redirect, setRedirect] = useState(false);
@@ -14,7 +13,7 @@ function App() {
   const [artistReleases, setArtistReleases] = useState([]);
   const [artistVideos, setArtistVideos] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [discogs, setDiscogs] = useContext(ArtistContext);
+  const [discogs, setDiscogs] = useState([]);
 
   const openModal = () => {
     setVisible(true);
@@ -53,40 +52,37 @@ function App() {
                     let videoData = response.data.mvids;
                     console.log(videoData);
                     setArtistVideos(artistVideos && artistVideos);
-                    const access = {
-                      headers: {
-                        Authorization:
-                          "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU",
-                      },
-                    };
-                    let discogs = async () => {
-                      await axios
-                        .get(
-                          `https://api.discogs.com/database/search?q=${searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`
-                        )
-                        .then((response) => {
-                          let artistName = response.data.results[0].id;
-                          let idSearch = async () => {
-                            await axios
-                              .get(
-                                `https://api.discogs.com/artists/${artistName}`,
-                                access
-                              )
-                              .then((response) => {
-                                console.log(response.data.members);
-                                setDiscogs(response.data.members);
-                              });
-                          };
-                          idSearch();
-                        });
-                    };
-                    discogs();
                   });
               };
               getVideo();
             });
         };
         getRelease();
+      });
+  };
+
+  const access = {
+    headers: {
+      Authorization:
+        "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU",
+    },
+  };
+  let getDiscogs = async () => {
+    await axios
+      .get(
+        `https://api.discogs.com/database/search?q=${searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`
+      )
+      .then((response) => {
+        let artistName = response.data.results[0].id;
+        let idSearch = async () => {
+          await axios
+            .get(`https://api.discogs.com/artists/${artistName}`, access)
+            .then((response) => {
+              console.log(response.data.members);
+              setDiscogs(response.data.members);
+            });
+        };
+        idSearch();
       });
   };
 
@@ -97,10 +93,9 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     getData();
+    getDiscogs();
     setRedirect(true);
   };
-
-  console.log(discogs);
 
   return (
     <div className="App">
@@ -112,7 +107,11 @@ function App() {
               We were unable to get enough data for this musician, please search
               again!
             </h3>
-            <Link to="/" className="modal__button" onClick={() => closeModal()}>
+            <Link
+              to="/muews"
+              className="modal__button"
+              onClick={() => closeModal()}
+            >
               Close
             </Link>
           </div>
@@ -120,7 +119,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/muews"
             element={
               <HeroSection
                 handleSearchName={handleSearchName}
@@ -134,7 +133,7 @@ function App() {
             }
           />
           <Route
-            path="/ResultsPage"
+            path="/resultspage"
             element={<ResultsPage artistInfo={artistInfo} discogs={discogs} />}
           />
         </Routes>
