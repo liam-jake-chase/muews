@@ -1,42 +1,32 @@
-import { React, useState } from 'react'
-import './ResultsTabsCard.scss'
-import { initialTabs as tabs } from "./TabsCardHeaders.ts";
-import { motion, AnimatePresence } from "framer-motion";
+import { React } from "react";
+import "./ResultsTabsCard.scss";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Profile from "../ResultsPage/Profile/Profile";
 
-export default function App() {
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+export default function ResultsTabsCard(props) {
 
   return (
-    <div className="window">
-      <nav>
-        <ul>
-          {tabs.map((item) => (
-            <li
-              key={item.label}
-              className={item === selectedTab ? "selected" : ""}
-              onClick={() => setSelectedTab(item)}
-            >
-              {`${item.icon} ${item.label}`}
-              {item === selectedTab ? (
-                <motion.div className="underline" layoutId="underline" />
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <main>
-        <AnimatePresence exitBeforeEnter>
-          <motion.div
-            key={selectedTab ? selectedTab.label : "empty"}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {selectedTab ? selectedTab.icon : "😋"}
-          </motion.div>
-        </AnimatePresence>
-      </main>
+    <div className="resultstabscard">
+      <Tabs defaultIndex={[0]}> 
+        <TabList>
+          <Tab>Profile</Tab>
+          <Tab>Releases</Tab>
+          <Tab>Events</Tab>
+          <Tab>Media</Tab>
+          <Tab>Social</Tab>
+        </TabList>
+
+        <TabPanel>
+          <Profile 
+          artistInfo={props.artistInfo}
+          />
+        </TabPanel>
+        <TabPanel>Releases</TabPanel>
+        <TabPanel>Events </TabPanel>
+        <TabPanel>Pictures & Videos</TabPanel>
+        <TabPanel>Social Media</TabPanel>
+      </Tabs>
     </div>
   );
 }

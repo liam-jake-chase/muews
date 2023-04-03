@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import HeroSection from "./components/HeroSection/HeroSection";
-import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
 import axios from "axios";
 import Modal from "react-awesome-modal";
@@ -13,16 +13,16 @@ function App() {
   const [artistReleases, setArtistReleases] = useState([]);
   const [artistVideos, setArtistVideos] = useState([]);
   const [visible, setVisible] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
+  const [discogs, setDiscogs] = useState([]);
 
-
- const openModal = () => {
-    setVisible(true)
-   
-  }
+  const openModal = () => {
+    setVisible(true);
+  };
 
   const closeModal = () => {
-   setVisible(false);
-  }
+    setVisible(false);
+  };
 
   let getData = () => {
     axios
@@ -53,7 +53,33 @@ function App() {
                     let videoData = response.data.mvids;
                     console.log(videoData);
                     setArtistVideos(artistVideos && artistVideos);
-                  });
+                    const access = {
+                      headers: {
+                        Authorization:
+                          "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU",
+                      },
+                    };
+                    let discogs = () => {
+                      axios
+                        .get(
+                          `https://api.discogs.com/database/search?q=${searchName}&artist&key=trndaRvgxPZeVGxKzXuo&secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU`
+                        )
+                        .then((response) => {
+                          let artistName = response.data.results[0].id;
+                          let idSearch = () => {
+                            axios
+                              .get(
+                                `https://api.discogs.com/artists/${artistName}`,
+                                access
+                              )
+                              .then((response) => {
+                                setDiscogs(response);
+                              });
+                          };
+                          idSearch();
+                        });
+                      };
+                    });
               };
               getVideo();
             });
@@ -70,27 +96,24 @@ function App() {
     e.preventDefault();
     getData();
     setRedirect(true);
+    setTabIndex(0);
   };
 
   return (
     <div className="App">
       <BrowserRouter>
-      <Modal visible={visible} effect="fadeInDown">
-            <div className="modal">
-              <h1>Sorry!</h1>
-              <h3>
-                We were unable to get enough data for this musician, please
-                search again!
-              </h3>
-              <Link
-                to="/"
-                className="modal__button"
-                onClick={() => closeModal()}
-              >
-                Close
-              </Link>
-            </div>
-          </Modal>
+        <Modal visible={visible} effect="fadeInDown">
+          <div className="modal">
+            <h1>Sorry!</h1>
+            <h3>
+              We were unable to get enough data for this musician, please search
+              again!
+            </h3>
+            <Link to="/" className="modal__button" onClick={() => closeModal()}>
+              Close
+            </Link>
+          </div>
+        </Modal>
         <Routes>
           <Route
             exact
@@ -107,7 +130,12 @@ function App() {
               />
             }
           />
-          <Route path="/ResultsPage" element={<ResultsPage />} />
+          <Route
+            path="/ResultsPage"
+            element={
+              <ResultsPage artistInfo={artistInfo} tabIndex={tabIndex} />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
