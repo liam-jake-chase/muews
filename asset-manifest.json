@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/muews/static/css/main.fa09179a.css",
-    "main.js": "/muews/static/js/main.74d23b37.js",
+    "main.js": "/muews/static/js/main.e0b61143.js",
     "static/js/787.86c2cee3.chunk.js": "/muews/static/js/787.86c2cee3.chunk.js",
     "static/media/Logo-movie-wide-two.gif": "/muews/static/media/Logo-movie-wide-two.7a1c33c5dfd92922aada.gif",
     "static/media/hero-image2.jpg": "/muews/static/media/hero-image2.355fb6b706a2dc4d7b53.jpg",
     "static/media/Music-news-you-can-use.svg": "/muews/static/media/Music-news-you-can-use.06c7a72429c3bb354d2ce9191f63eff5.svg",
     "index.html": "/muews/index.html",
     "main.fa09179a.css.map": "/muews/static/css/main.fa09179a.css.map",
-    "main.74d23b37.js.map": "/muews/static/js/main.74d23b37.js.map",
+    "main.e0b61143.js.map": "/muews/static/js/main.e0b61143.js.map",
     "787.86c2cee3.chunk.js.map": "/muews/static/js/787.86c2cee3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa09179a.css",
-    "static/js/main.74d23b37.js"
+    "static/js/main.e0b61143.js"
   ]
 }
