@@ -1,14 +1,45 @@
 @import "./../../../partials/mixins";
 
 .releases {
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
   &__banner {
     height: auto;
     width: 100%;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
+    border-bottom: solid 1px white;
   }
 
   &__header {
+      margin: .75rem 0 1rem 0 ;
     color: whitesmoke;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1px white;
+  }
+
+  &__flex-one {
+    border-right: solid 1px white;
+    
+  }
+
+  &__flex-two {
+    border-right: solid 1px white;
+   
+  }
+
+  &__title {
+    color: whitesmoke;
+    font-size: 1rem;
+    overflow: scroll;
+    margin: 1.5rem 2rem 0 0;
+    width: 100%;
+
   }
 }

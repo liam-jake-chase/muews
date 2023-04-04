@@ -80,6 +80,7 @@ function App() {
           await axios
             .get(`https://api.discogs.com/artists/${artistName}`, access)
             .then((response) => {
+              console.log(response.data.name);
               console.log(response.data.members);
               setDiscogs(response.data.members);
             });
@@ -139,7 +140,16 @@ function App() {
             element={<ResultsPage artistInfo={artistInfo} discogs={discogs} />}
           />
 
-          <Route exact path="/releases" element={<Releases artistInfo={artistInfo} />} />
+          <Route
+            exact
+            path="/releases"
+            element={
+              <Releases
+                artistInfo={artistInfo}
+                artistReleases={artistReleases}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

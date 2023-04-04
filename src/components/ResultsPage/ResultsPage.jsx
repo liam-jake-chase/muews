@@ -1,9 +1,10 @@
 import React from "react";
 import "./ResultsPage.scss";
-
 import FooterNav from "./FooterNav/FooterNav";
 
+
 export default function ResultsPage(props) {
+
   return (
     <>
       <div className="results">

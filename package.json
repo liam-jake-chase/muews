@@ -1,4 +1,5 @@
-{ "homepage": "https://liam-jake-chase.github.io/muews",
+{
+  "homepage": "https://liam-jake-chase.github.io/muews",
   "name": "muews",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "react-admin": "^4.7.0",
     "react-awesome-modal": "^2.0.5",
     "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "sass": "^1.57.1",
     "web-vitals": "^2.1.4"

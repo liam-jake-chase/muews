@@ -3,14 +3,15 @@
 .footer {
 
     &__nav {
-        background-color: none;
+        background-color: black;
         @include desktop {
             position: absolute;
-            bottom: -1rem;            
+            bottom: 0rem;            
             width: 100%;
             border-bottom-left-radius: .5rem;
             border-bottom-right-radius: .5rem;
-            opacity: 80%;
+            // opacity: 80%;
+            height: 4.5rem
             
         }
     }
@@ -22,8 +23,9 @@
             justify-content: space-evenly;
             color: white;
             list-style: none;
-            background-color: rgb(41, 52, 77);
-            opacity: 90%;
+            background-color: black;
+            
+            // opacity: 90%;
 
         }
     }
@@ -33,7 +35,7 @@
         @include desktop {
             border: solid 1px whitesmoke;
             border-radius: 1rem;
-            padding: 1rem 4rem;
+            padding: 1rem 6%;
             
         }
     }
