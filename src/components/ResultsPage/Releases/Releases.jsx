@@ -1,19 +1,25 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Releases.scss";
-import { ArtistContext } from "../../../context/ArtistContext";
+import FooterNav from "../FooterNav/FooterNav";
 
-export default function Releases() {
-  const [artistReleases, setArtistReleases] = useContext(ArtistContext);
-  console.log(artistReleases)
+export default function Releases(props) {
   return (
     <>
       <div className="releases">
+        <img
+          className="releases__banner"
+          src={props.artistInfo.strArtistBanner}
+          alt="main-banner"
+        />
         <h1 className="releases__header">RELEASES</h1>
         <div className="releases__container">
-          {artistReleases.map((albumTitle) => {
-            <h2 className="releases__title">{albumTitle.strAlbum}</h2>;
-          })}
+          {/* {props.artistReleases.map((albumTitle) => {
+            return <h2 className="releases__title">{albumTitle.strAlbum}</h2>;
+          })} */}
         </div>
+        <footer className="results__footer-nav">
+          <FooterNav />
+        </footer>
       </div>
     </>
   );

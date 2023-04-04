@@ -1,8 +1,14 @@
-@import './../../../partials/mixins';
+@import "./../../../partials/mixins";
 
 .releases {
-    
-    &__header {
-        color: whitesmoke;
-    }
+  &__banner {
+    height: auto;
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+
+  &__header {
+    color: whitesmoke;
+  }
 }

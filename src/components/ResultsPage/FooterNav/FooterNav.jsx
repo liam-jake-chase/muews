@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-admin';
 import './FooterNav.scss';
 
 export default function FooterNav() {
@@ -8,10 +9,10 @@ export default function FooterNav() {
         <nav className='footer__nav'>
             <ul className='footer__ul'>
                 <li className='footer__li'>
-                    Profile
+                <Link to="/profile">Profile</Link> 
                 </li>
                 <li className='footer__li'>
-                    Releases
+                    <Link to="/releases">Releases</Link> 
                 </li>
                 <li className='footer__li'>
                     Events

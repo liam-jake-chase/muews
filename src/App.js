@@ -1,10 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
-import HeroSection from "./components/HeroSection/HeroSection";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import HeroSection from "./components/HeroSection/HeroSection";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
+import Releases from "./components/ResultsPage/Releases/Releases";
 import axios from "axios";
 import Modal from "react-awesome-modal";
+import "./components/ResultsPage/ResultsPage.scss";
 
 function App() {
   const [redirect, setRedirect] = useState(false);
@@ -133,9 +135,11 @@ function App() {
             }
           />
           <Route
-            path="/resultspage"
+            path="/profile"
             element={<ResultsPage artistInfo={artistInfo} discogs={discogs} />}
           />
+
+          <Route exact path="/releases" element={<Releases artistInfo={artistInfo} />} />
         </Routes>
       </BrowserRouter>
     </div>

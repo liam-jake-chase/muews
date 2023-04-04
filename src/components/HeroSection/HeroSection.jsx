@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 export default function HeroSection(props) {
   if (props.redirect) {
-    return <Navigate to="/resultspage" />;
+    return <Navigate to="/profile" />;
   }
 
   return (

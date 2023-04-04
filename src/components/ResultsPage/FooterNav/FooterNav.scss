@@ -6,8 +6,7 @@
         background-color: none;
         @include desktop {
             position: absolute;
-            bottom: -1rem;
-            
+            bottom: -1rem;            
             width: 100%;
             border-bottom-left-radius: .5rem;
             border-bottom-right-radius: .5rem;
