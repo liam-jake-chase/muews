@@ -1,10 +1,6 @@
 @import "./../../../partials/mixins";
 
 .releases {
-  ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  }
   &__banner {
     height: auto;
     width: 100%;
@@ -14,32 +10,81 @@
   }
 
   &__header {
-      margin: .75rem 0 1rem 0 ;
+    margin: 0.75rem 0 1rem 0;
     color: whitesmoke;
   }
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-top: solid 1px white;
   }
 
   &__flex-one {
     border-right: solid 1px white;
-    
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+
   }
 
   &__flex-two {
     border-right: solid 1px white;
-   
+    width: 33%;
+  }
+
+  &__image-thumb {
+    height: auto;
+    width: 90%;
+    margin-top: 10%;
+    margin-bottom: auto;
+  }
+
+  &__flex-three {
+    width: 33%;
+  }
+
+  &__title:hover {
+    padding-top: 1rem;
+    background-color: rgb(30, 30, 129);
+    opacity: 70%;
+    color: lightblue;
   }
 
   &__title {
+    background-color: rgb(30, 30, 129);
     color: whitesmoke;
     font-size: 1rem;
     overflow: scroll;
-    margin: 1.5rem 2rem 0 0;
+    padding-top: 1rem;
     width: 100%;
-
+    // height: 5%;
   }
+
+  &__title-active {
+    padding-top: 1rem;
+    background-color: rgb(12, 12, 12);
+    opacity: 70%;
+    color: rgb(20, 176, 228);
+  }
+
+  &__description {
+
+    @include desktop {
+      color: whitesmoke;
+      text-align: left;
+      width: 90%;
+      margin-left: 1rem;
+
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+a:visited {
+  background-color: black;
 }
