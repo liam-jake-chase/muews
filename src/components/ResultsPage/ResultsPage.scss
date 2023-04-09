@@ -40,6 +40,11 @@ body {
       background: transparent;
     }
 
+    &__container-one {
+      border-top: solid 1px white;
+      width: 100%;
+    }
+
     &__biography {
       color: whitesmoke;
       text-align: center;
@@ -62,7 +67,7 @@ body {
       }
     }
 
-    &__container {
+    &__container-two {
       @include desktop {
         display: flex;
         flex-direction: column;
@@ -108,8 +113,11 @@ body {
     }
 
     &__header {
-      color: whitesmoke;
-      margin: 1rem 0 0 0;
+      @include desktop {
+        margin: 0.75rem 0 1rem 0;
+        color: whitesmoke;
+        font-size: 2rem;
+      }
     }
 
     &__header-two {

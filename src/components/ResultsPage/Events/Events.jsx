@@ -14,8 +14,8 @@ export default function Events(props) {
           />
         </div>
         <h1 className="events__header">EVENTS</h1>
-        <h2 className="events__noData">{props.noData}</h2>
         <div className="events__container">
+        <h2 className="events__noData">{props.noData}</h2>
           <div className="events__flex-one">
             <h3 className="events__title-header events__font">Start Date:</h3>
 
