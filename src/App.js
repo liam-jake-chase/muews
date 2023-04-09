@@ -23,6 +23,7 @@ function App() {
   const [noData, setNoData] = useState(null);
   const [social, setSocial] = useState([]);
 
+
   const openModal = () => {
     setVisible(true);
   };

@@ -73,8 +73,9 @@
 }
 
 .player {
-  height: 25rem;
-  width: 35rem;
+  height: 40vh;
+  max-height: 45vh;
+  width: 40vw;
   border: solid 1px white;
   border-radius: 1rem;
   position: relative;

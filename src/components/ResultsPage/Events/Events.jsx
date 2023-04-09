@@ -17,10 +17,6 @@ export default function Events(props) {
         <h2 className="events__noData">{props.noData}</h2>
         <div className="events__container">
           <div className="events__flex-one">
-            {props.event.map((item) => {
-              return <h2 className="events__title">{item.name}</h2>;
-            })}
-
             <h3 className="events__title-header events__font">Start Date:</h3>
 
             {props.event.map((date) => {
