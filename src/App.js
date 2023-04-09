@@ -7,6 +7,9 @@ import Releases from "./components/ResultsPage/Releases/Releases";
 import axios from "axios";
 import Modal from "react-awesome-modal";
 import "./components/ResultsPage/ResultsPage.scss";
+import Events from "./components/ResultsPage/Events/Events";
+import Social from "./components/ResultsPage/Social/Social";
+import Media from "./components/ResultsPage/Media/Media";
 
 function App() {
   const [redirect, setRedirect] = useState(false);
@@ -14,8 +17,11 @@ function App() {
   const [artistInfo, setArtistInfo] = useState([]);
   const [artistReleases, setArtistReleases] = useState([]);
   const [artistVideos, setArtistVideos] = useState([]);
+  const [event, setEvent] = useState([]);
   const [visible, setVisible] = useState(false);
   const [discogs, setDiscogs] = useState([]);
+  const [noData, setNoData] = useState(null);
+  const [social, setSocial] = useState([]);
 
   const openModal = () => {
     setVisible(true);
@@ -80,12 +86,28 @@ function App() {
           await axios
             .get(`https://api.discogs.com/artists/${artistName}`, access)
             .then((response) => {
-              console.log(response.data.name);
+              console.log(response.data);
               console.log(response.data.members);
               setDiscogs(response.data.members);
+              setSocial(response.data.urls)
             });
         };
         idSearch();
+      });
+  };
+
+  const getEvent = () => {
+    axios
+      .get(
+        `https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=2mitntFIkOiRSejzvu3iHKjtOC6AiuyB&keyword=${searchName}`
+      )
+      .then((response) => {
+        console.log(response.data._embedded.events);
+        if (response.data.length === 0) {
+          setNoData("No Event Listings");
+        } else {
+          setEvent(response.data._embedded.events);
+        }
       });
   };
 
@@ -97,6 +119,7 @@ function App() {
     e.preventDefault();
     getData();
     getDiscogs();
+    getEvent();
     setRedirect(true);
   };
 
@@ -148,6 +171,27 @@ function App() {
                 artistInfo={artistInfo}
                 artistReleases={artistReleases}
               />
+            }
+          />
+          <Route
+            exact
+            path="/events"
+            element={
+              <Events artistInfo={artistInfo} noData={noData} event={event} />
+            }
+          />
+          <Route
+            exact
+            path="/media"
+            element={
+              <Media artistInfo={artistInfo} />
+            }
+          />
+           <Route
+            exact
+            path="/social"
+            element={
+              <Social artistInfo={artistInfo} social={social} />
             }
           />
         </Routes>

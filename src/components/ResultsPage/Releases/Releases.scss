@@ -1,17 +1,31 @@
 @import "./../../../partials/mixins";
 
 .releases {
+
+
+  &__banner-container {
+    width: 100%;
+    border-bottom: solid 1px white;
+  }
   &__banner {
     height: auto;
-    width: 100%;
+    width: 50%;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    border-bottom: solid 1px white;
+   
   }
 
   &__header {
     margin: 0.75rem 0 1rem 0;
     color: whitesmoke;
+  }
+
+  &__header-two {
+    color: whitesmoke;
+    position: fixed;
+    width: 33%;
+
+    
   }
 
   &__container {
@@ -25,7 +39,7 @@
     width: 33%;
     display: flex;
     flex-direction: column;
-
+    padding-top: 1.5%;
   }
 
   &__flex-two {
@@ -34,10 +48,13 @@
   }
 
   &__image-thumb {
-    height: auto;
-    width: 90%;
-    margin-top: 10%;
-    margin-bottom: auto;
+    @include desktop {
+      height: auto;
+      width: 28rem;
+      top: 6.55rem;
+     
+      position: relative;
+    }
   }
 
   &__flex-three {
@@ -58,7 +75,8 @@
     overflow: scroll;
     padding-top: 1rem;
     width: 100%;
-    // height: 5%;
+    border-radius: 1rem;;
+   
   }
 
   &__title-active {
@@ -69,13 +87,15 @@
   }
 
   &__description {
-
     @include desktop {
       color: whitesmoke;
       text-align: left;
-      width: 90%;
+      width: 31.5%;
+      height: 100%;
       margin-left: 1rem;
-
+      margin-top: 7%;
+      position: fixed;
+      font-size: .65rem;
     }
   }
 }

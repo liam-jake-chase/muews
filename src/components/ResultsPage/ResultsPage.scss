@@ -7,123 +7,115 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  overflow:auto;
+  overflow: auto;
   min-height: 100%;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.726);
   background-blend-mode: multiply;
   padding: 0;
   margin: 0;
-
 }
 
 .results {
-  &__banner {
-    height: auto;
+  &__banner-container {
     width: 100%;
-    border-top-right-radius: .5rem;
-    border-top-left-radius: .5rem;
     border-bottom: solid 1px white;
   }
 
-
-.profile {
-  height: 100%;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-
-  ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
+  &__banner {
+    height: auto;
+    width: 50%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
   }
 
-  &__biography {
-    color: whitesmoke;
-    text-align: center;
-    overflow: scroll;
-    margin: 1rem 0.5rem 1rem 0.5rem;
-
-    @include desktop {
-      margin: 1rem auto 0 auto;
-      font-size: 80%;
-      width: 80%;
-      height: 30%;
-    }
-  }
-
-  &__bandinfo {
+  .profile {
+    height: 100%;
     display: flex;
+    margin: auto;
     flex-direction: column;
-    color: whitesmoke;
 
-    @include desktop {
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
     }
-  }
 
-  &__container {
-    @include desktop {
+    &__biography {
+      color: whitesmoke;
+      text-align: center;
+      overflow: scroll;
+      margin: 1rem 0.5rem 1rem 0.5rem;
+
+      @include desktop {
+        margin: 1rem auto 0 auto;
+        font-size: 80%;
+        width: 80%;
+        height: 30%;
+      }
+    }
+
+    &__bandinfo {
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        color: whitesmoke;
+      }
+    }
+
+    &__container {
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+      }
+    }
+
+    &__memberlist {
+      color: whitesmoke;
+      list-style: none;
       display: flex;
-      flex-direction: column;
-      overflow-y: scroll;
+
+      @include desktop {
+        flex-direction: row;
+        margin-bottom: 0;
+      }
+    }
+
+    &__member {
+      background: none;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.75rem;
+    }
+
+    &__imagelist {
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 3rem;
+        margin-left: 1rem;
+        flex-basis: 5rem;
+        
+      }
+    }
+
+    &__image {
+      @include desktop {
+        height: 13rem;
+        border-radius: 0.5rem;
+        max-width: 13rem;
+      }
+    }
+
+    &__header {
+      color: whitesmoke;
+      margin: 1rem 0 0 0;
+    }
+
+    &__header-two {
+      color: whitesmoke;
+      margin: 0;
     }
   }
-
-  &__memberlist {
-    color: whitesmoke;
-    list-style: none;
-    display: flex;
-    
-    
-
-    @include desktop {
-      flex-direction: row;
-      margin-bottom: 0;
-      
-
-    }
-  }
-
-  &__member {
-    background: none;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.75rem;
-  }
-
-  &__imagelist {
-    @include desktop {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-top: 3rem;
-    }
-  }
-
-  &__image {
-    height: 4rem;
-    border-radius: 0.5rem;
-
-    @include desktop {
-
-    
-      
-     
-    }
-    
-  }
-
-  &__header {
-    color: whitesmoke;
-    margin: 1rem 0 0 0;
-    
-  }
-
-  &__header-two {
-    color: whitesmoke;
-    margin: 0;
-    
-  }
-}
-
 }

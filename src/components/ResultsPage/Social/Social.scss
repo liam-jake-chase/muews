@@ -1,0 +1,86 @@
+@import "./../../../partials/mixins";
+
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.social {
+  &__header {
+    @include desktop {
+      margin: 0.75rem 0 1rem 0;
+      color: whitesmoke;
+      font-size: 2rem;
+    }
+  }
+
+  &__banner-container {
+    width: 100%;
+    border-bottom: solid 1px white;
+  }
+
+  &__banner {
+    @include desktop {
+      height: auto;
+      width: 50%;
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+    }
+  }
+
+  &__container {
+    border-top: solid 1px white;
+    width: 100%;
+  }
+
+  &__items {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8rem;
+      width: 50vw;
+      margin: auto;
+      position: relative;
+      top: 5rem;
+    }
+  }
+
+  &__item {
+    @include desktop {
+      flex-basis: 25%;
+      border: 1px solid white;
+      border-radius: 1rem;
+      padding: 2rem 2rem;
+
+      &:hover {
+        background-color: rgb(30, 30, 129);
+      }
+    }
+  }
+
+
+  &__image {
+    @include desktop {
+      height: 7rem;
+      object-fit: cover;
+      max-width: 100%;
+      vertical-align: middle;
+      border-radius: 5px;
+
+      &__facebook {
+        padding: 0 2.5rem;
+      }
+
+      &__instagram {
+        padding: 0 1.25rem;
+      }
+
+      &__globe {
+         padding: 0 1.25rem;
+      }
+    }
+  }
+}

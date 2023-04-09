@@ -2,17 +2,17 @@ import React from "react";
 import "./ResultsPage.scss";
 import FooterNav from "./FooterNav/FooterNav";
 
-
 export default function ResultsPage(props) {
-
   return (
     <>
       <div className="results">
-        <img
-          className="results__banner"
-          src={props.artistInfo.strArtistBanner}
-          alt="main-banner"
-        />
+        <div className="results__banner-container">
+          <img
+            className="results__banner"
+            src={props.artistInfo.strArtistBanner}
+            alt="main-banner"
+          />
+        </div>
         <div className="results__tabs-card-container">
           <div className="profile">
             <h1 className="profile__header">BIOGRAPHY</h1>

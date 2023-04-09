@@ -1,42 +1,36 @@
-@import '../../../partials/mixins';
+@import "../../../partials/mixins";
 
 .footer {
-
-    &__nav {
-        background-color: black;
-        @include desktop {
-            position: absolute;
-            bottom: 0rem;            
-            width: 100%;
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
-            // opacity: 80%;
-            height: 4.5rem
-            
-        }
+  &__nav {
+    background-color: black;
+    @include desktop {
+      position: absolute;
+      bottom: 0rem;
+      width: 100%;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      // opacity: 80%;
+      height: 4.5rem;
     }
+  }
 
-    &__ul {
+  &__ul {
+    @include desktop {
+      display: flex;
+      justify-content: space-evenly;
+      color: white;
+      list-style: none;
+      background-color: black;
 
-        @include desktop {
-            display: flex;
-            justify-content: space-evenly;
-            color: white;
-            list-style: none;
-            background-color: black;
-            
-            // opacity: 90%;
-
-        }
+      // opacity: 90%;
     }
+  }
 
-    &__li {
-
-        @include desktop {
-            border: solid 1px whitesmoke;
-            border-radius: 1rem;
-            padding: 1rem 6%;
-            
-        }
+  &__li {
+    @include desktop {
+      border: solid 1px whitesmoke;
+      border-radius: 1rem;
+      padding: 1rem 6%;
     }
+  }
 }
