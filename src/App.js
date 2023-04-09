@@ -131,7 +131,7 @@ function App() {
           <div className="modal">
             <h1>Sorry!</h1>
             <h3>
-              We were unable to get enough data for this musician, please search
+              We were unable to get enough data for this musician or it was spelled incorrectly, please search
               again!
             </h3>
             <Link

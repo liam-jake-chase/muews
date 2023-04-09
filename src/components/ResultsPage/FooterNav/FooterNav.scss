@@ -29,6 +29,19 @@
       border: solid 1px whitesmoke;
       border-radius: 1rem;
       padding: 1rem 6%;
+      text-decoration: none;
+
+      &:hover {
+        background-color: lightblue;
+      }
     }
+  }
+
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: rgb(43, 43, 139);
   }
 }
