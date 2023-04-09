@@ -7,16 +7,11 @@ body {
   overflow: hidden;
 }
 .events {
-
-
   &__header {
     @include desktop {
       margin: 0.75rem 0 1rem 0;
       color: whitesmoke;
       font-size: 2rem;
-      
-    
-   
     }
   }
 
@@ -31,7 +26,6 @@ body {
       width: 50%;
       border-top-right-radius: 0.5rem;
       border-top-left-radius: 0.5rem;
-     
     }
   }
 
@@ -89,7 +83,7 @@ body {
     padding: 2rem 4rem;
     background-color: rgb(111, 111, 179);
   }
-  &__flex-two {   
+  &__flex-two {
     width: 70%;
     height: 100vh;
   }
@@ -100,19 +94,19 @@ body {
   }
 
   &__photo {
-      height: 30rem;
-      width: auto;
-      margin: 1.5rem auto 0 auto;
-      border-radius: .5rem;;
+    height: 30rem;
+    width: auto;
+    margin: 1.5rem auto 0 auto;
+    border-radius: 0.5rem;
   }
 
-//   &__photo-grid {
-//     display: flex;    
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: flex-start;
-//     align-content: stretch;
-//     padding: 0;
-//     max-width: 980px;
-//   }
+  //   &__photo-grid {
+  //     display: flex;
+  //     flex-direction: row;
+  //     flex-wrap: wrap;
+  //     justify-content: flex-start;
+  //     align-content: stretch;
+  //     padding: 0;
+  //     max-width: 980px;
+  //   }
 }

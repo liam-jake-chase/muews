@@ -4,7 +4,6 @@ import FooterNav from "../FooterNav/FooterNav";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
 export default function Releases(props) {
   const [albumID, setAlbumID] = useState(undefined);
   const [albumImage, setAlbumImage] = useState(undefined);
@@ -23,7 +22,7 @@ export default function Releases(props) {
   return (
     <>
       <div className="releases">
-        <div className="releases__banner-container">  
+        <div className="releases__banner-container">
           <img
             className="releases__banner"
             src={props.artistInfo.strArtistBanner}
@@ -33,7 +32,6 @@ export default function Releases(props) {
         <h1 className="releases__header">RELEASES</h1>
         <div className="releases__container">
           <div className="releases__flex-one active">
-      
             <h2 className="releases__header">Album</h2>
             {props.artistReleases.map((albumTitle, index) => {
               return (

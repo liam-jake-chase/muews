@@ -13,7 +13,63 @@
   }
 
   &__header {
-    margin: 0.75rem 0 1rem 0;
-    color: whitesmoke;
+    @include desktop {
+      margin: 0.75rem 0 1rem 0;
+      color: whitesmoke;
+      font-size: 2rem;
+    }
   }
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: solid 1px white;
+  }
+
+  &__flex-one {
+    border-right: solid 1px white;
+    width: 40%;
+    padding-top: 1.5%;
+  }
+
+  &__flex-two {
+    width: 60%;
+  }
+
+  &__videolist {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: auto;
+      position: relative;
+      top: 5rem;
+    }
+  }
+
+  &__videoitem {
+    @include desktop {
+      flex-basis: 25%;
+      border: 1px solid white;
+      border-radius: 1rem;
+      padding: 1rem 0;
+
+      &:hover {
+        background-color: rgb(30, 30, 129);
+      }
+    }
+  }
+  &__thumb {
+    height: 10rem;
+  }
+}
+
+.player {
+   height: 25rem; 
+  width: 35rem;
+  border: solid 1px white;
+  border-radius: 1rem;
+  position: relative;
+  top: 7.5rem;
 }
