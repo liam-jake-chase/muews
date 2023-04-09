@@ -22,7 +22,6 @@ function App() {
   const [discogs, setDiscogs] = useState([]);
   const [noData, setNoData] = useState(null);
   const [social, setSocial] = useState([]);
-  const [artistID, setArtistID] = useState(undefined)
 
   const openModal = () => {
     setVisible(true);
@@ -46,7 +45,7 @@ function App() {
           setArtistInfo(response.data.artists[0]);
         }
         let num = response.data.artists[0].idArtist;
-        setArtistID(num)
+
         let getRelease = async () => {
           await axios
             .get(`https://theaudiodb.com/api/v1/json/523532/album.php?i=${num}`)
@@ -58,7 +57,7 @@ function App() {
                   .get(
                     `https://theaudiodb.com/api/v1/json/523532/mvid.php?i=${num}`
                   )
-                  .then((response) => {                 
+                  .then((response) => {
                     let videoData = response.data.mvids;
                     console.log(videoData);
                     setArtistVideos(videoData);
@@ -91,7 +90,7 @@ function App() {
               console.log(response.data);
               console.log(response.data.members);
               setDiscogs(response.data.members);
-              setSocial(response.data.urls)
+              setSocial(response.data.urls);
             });
         };
         idSearch();
@@ -186,15 +185,13 @@ function App() {
             exact
             path="/media"
             element={
-              <Media artistInfo={artistInfo} artistVideos={artistVideos}/>
+              <Media artistInfo={artistInfo} artistVideos={artistVideos} />
             }
           />
-           <Route
+          <Route
             exact
             path="/social"
-            element={
-              <Social artistInfo={artistInfo} social={social} />
-            }
+            element={<Social artistInfo={artistInfo} social={social} />}
           />
         </Routes>
       </BrowserRouter>

@@ -39,7 +39,9 @@ export default function Events(props) {
             {props.event.map((price) => {
               if (!props.event[0].priceRange) {
                 return (
-                  <h4 className="events__title events__title__cancelled">Currency Not Available - Cancelled</h4>
+                  <h4 className="events__title events__title__cancelled">
+                    Currency Not Available - Cancelled
+                  </h4>
                 );
               }
               return (
@@ -50,7 +52,11 @@ export default function Events(props) {
             })}
             {props.event.map((range) => {
               if (!props.event[0].priceRange) {
-                return <h4 className="events__title events__title__cancelled">Pricing Not Available - Cancelled</h4>;
+                return (
+                  <h4 className="events__title events__title__cancelled">
+                    Pricing Not Available - Cancelled
+                  </h4>
+                );
               } else {
                 return (
                   <li className="events__item">
@@ -74,9 +80,13 @@ export default function Events(props) {
             })}
             <h6 className="events__title-header events__font">Tickets:</h6>
             {props.event.map((tickets) => {
-               if (!props.event[0].priceRange) {
-                 return <button className="events__item-tickets" disabled>Not Available</button>
-               }
+              if (!props.event[0].priceRange) {
+                return (
+                  <button className="events__item-tickets" disabled>
+                    Not Available
+                  </button>
+                );
+              }
               return (
                 <button
                   onClick={() => {

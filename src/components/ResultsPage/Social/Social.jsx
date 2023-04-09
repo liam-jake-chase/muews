@@ -65,7 +65,11 @@ export default function Social(props) {
               rel="noreferrer"
             >
               <li className="social__item ">
-                <img className="social__image social__image__globe" src={globe} alt="website" />
+                <img
+                  className="social__image social__image__globe"
+                  src={globe}
+                  alt="website"
+                />
               </li>
             </a>
           </ul>

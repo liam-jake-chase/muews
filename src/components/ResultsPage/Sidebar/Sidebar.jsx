@@ -10,7 +10,7 @@ export default function Sidebar(props) {
   return (
     <>
       <Menu>
-      <p>MENU</p>
+        <p>MENU</p>
         <Link id="home" className="menu-item" to="/muews">
           Search
         </Link>

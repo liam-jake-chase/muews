@@ -1,8 +1,6 @@
 @import "./../../../partials/mixins";
 
 .releases {
-
-
   &__banner-container {
     width: 100%;
     border-bottom: solid 1px white;
@@ -12,7 +10,6 @@
     width: 50%;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-   
   }
 
   &__header {
@@ -24,8 +21,6 @@
     color: whitesmoke;
     position: fixed;
     width: 33%;
-
-    
   }
 
   &__container {
@@ -40,6 +35,8 @@
     display: flex;
     flex-direction: column;
     padding-top: 1.5%;
+    height: 100vh;
+    overflow-x: auto;
   }
 
   &__flex-two {
@@ -52,7 +49,7 @@
       height: auto;
       width: 28rem;
       top: 6.55rem;
-     
+
       position: relative;
     }
   }
@@ -75,8 +72,7 @@
     overflow: scroll;
     padding-top: 1rem;
     width: 100%;
-    border-radius: 1rem;;
-   
+    border-radius: 1rem;
   }
 
   &__title-active {
@@ -95,7 +91,7 @@
       margin-left: 1rem;
       margin-top: 7%;
       position: fixed;
-      font-size: .65rem;
+      font-size: 0.65rem;
     }
   }
 }

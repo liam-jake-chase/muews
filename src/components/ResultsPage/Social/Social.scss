@@ -61,7 +61,6 @@ body {
     }
   }
 
-
   &__image {
     @include desktop {
       height: 7rem;
@@ -79,7 +78,7 @@ body {
       }
 
       &__globe {
-         padding: 0 1.25rem;
+        padding: 0 1.25rem;
       }
     }
   }
