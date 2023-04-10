@@ -23,7 +23,11 @@
     width: 33%;
     margin-left: auto;
     margin-right: auto;
-    top: 1rem;    
+    top: 1rem;
+    &__album {
+      top: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__container {
@@ -37,9 +41,15 @@
     width: 33%;
     display: flex;
     flex-direction: column;
-    padding-top: 1.5%;
-    height: 100vh;
+    height: 70vh;
     overflow-x: auto;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
   }
 
   &__flex-two {
@@ -51,14 +61,14 @@
     display: flex;
     justify-content: center;
     gap: 5rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
   }
 
   &__image-thumb {
     @include desktop {
       height: auto;
       width: 28rem;
-      top: 2rem;
+      top: 0;
       position: relative;
     }
   }
@@ -71,13 +81,13 @@
 
   &__noInfo {
     text-align: center;
-    color: whitesmoke;    
+    color: whitesmoke;
     position: relative;
     font-size: 1.5rem;
     &__description {
-      top: 1rem;
+      top: 0.5rem;
     }
-    &__album-cover {      
+    &__album-cover {
       font-size: 1.5rem;
     }
   }
@@ -97,6 +107,7 @@
     padding-top: 1rem;
     width: 100%;
     border-radius: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__title-active {
@@ -111,7 +122,7 @@
       color: whitesmoke;
       text-align: left;
       position: relative;
-      top: 1.5rem;
+      top: 1rem;
       height: 80vh;
       margin-left: auto;
       margin-right: auto;
@@ -134,7 +145,6 @@ a:visited {
 .arrow-hidden {
   display: none;
 }
-
 
 .arrow {
   display: initial;
@@ -164,14 +174,14 @@ a:visited {
 
 @keyframes animate {
   0% {
-      opacity: 0;
-      transform: rotate(45deg) translate(-20px, -20px);
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
   }
   50% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      opacity: 0;
-      transform: rotate(45deg) translate(20px, 20px);
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
   }
 }

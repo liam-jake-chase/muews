@@ -58,26 +58,30 @@ export default function Releases(props) {
         <h1 className="releases__header">RELEASES</h1>
         <div className="releases__container">
           <div className="releases__flex-one active">
-            <h2 className="releases__header">Album</h2>
-            {props.artistReleases.map((albumTitle, index) => {
-              return (
-                <li onClick={changeStyle}>
-                  <button
-                    id="button"
-                    className="releases__title"
-                    onClick={() => {
-                      setAlbumID(albumTitle.idAlbum);
-                      window.onload = function () {
-                        document.getElementById("button").click();
-                      };
-                    }}
-                    key={index}
-                  >
-                    {albumTitle.strAlbum}
-                  </button>
-                </li>
-              );
-            })}
+            <h2 className="releases__header-two releases__header-two__album">
+              Album
+            </h2>
+            <ul className="releases__list">
+              {props.artistReleases.map((albumTitle, index) => {
+                return (
+                  <li onClick={changeStyle}>
+                    <button
+                      id="button"
+                      className="releases__title"
+                      onClick={() => {
+                        setAlbumID(albumTitle.idAlbum);
+                        window.onload = function () {
+                          document.getElementById("button").click();
+                        };
+                      }}
+                      key={index}
+                    >
+                      {albumTitle.strAlbum}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <div className="releases__flex-two">
             <h2 className="releases__header-two">Album Cover</h2>
