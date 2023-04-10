@@ -192,7 +192,7 @@ function App() {
           <Route
             exact
             path="/social"
-            element={<Social artistInfo={artistInfo} social={social} />}
+            element={<Social artistInfo={artistInfo} social={social} searchName={searchName}/>}
           />
         </Routes>
       </BrowserRouter>

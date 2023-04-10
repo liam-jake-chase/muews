@@ -7,6 +7,12 @@ import instagram from "../../../assets/Icon-instagram.svg";
 import globe from "../../../assets/globe.png";
 
 export default function Social(props) {
+  const nameSplit = props.searchName.split(" ");
+  const nameJoin = nameSplit.join("");
+  const facebookURL = `https://www.facebook.com/${nameJoin}`;
+  const twitterURL = `https://www.twitter.com/${nameJoin}`;
+  const instagramURL = `https://www.instagram.com/${nameJoin}`;
+
   return (
     <>
       <section className="social">
@@ -22,7 +28,7 @@ export default function Social(props) {
           <ul className="social__items">
             <a
               className="social__link"
-              href={props.social[1]}
+              href={facebookURL}
               target="_blank"
               rel="noreferrer"
             >
@@ -31,12 +37,12 @@ export default function Social(props) {
                   className="social__image social__image__facebook"
                   src={facebook}
                   alt="facebook"
-                />{" "}
+                />
               </li>
             </a>
             <a
               className="social__link"
-              href={props.social[4]}
+              href={twitterURL}
               target="_blank"
               rel="noreferrer"
             >
@@ -46,7 +52,7 @@ export default function Social(props) {
             </a>
             <a
               className="social__link"
-              href={props.social[2]}
+              href={instagramURL}
               target="_blank"
               rel="noreferrer"
             >
