@@ -7,34 +7,35 @@ export default function FooterNav() {
     <div className="footer">
       <nav className="footer__nav">
         <ul className="footer__ul">
-          <li className="footer__li">
             <Link className="footer__link" to="/profile">
+          <li className="footer__li">
               Profile
-            </Link>
           </li>
-          <li className="footer__li">
+            </Link>
             <Link className="footer__link" to="/releases">
+          <li className="footer__li">
               Releases
-            </Link>
           </li>
-          <li className="footer__li">
+            </Link>
             <Link className="footer__link" to="/events">
+          <li className="footer__li">
               Events
-            </Link>
           </li>
-          <li className="footer__li">
+            </Link>
             <Link className="footer__link" to="/media">
+          <li className="footer__li">
               Media
-            </Link>
           </li>
-          <li className="footer__li">
+            </Link>
             <Link className="footer__link" to="/social">
-              Social
-            </Link>
-          </li>
           <li className="footer__li">
-            <a href="/muews">Search</a>
+              Social
           </li>
+            </Link>
+            <a className="footer__link" href="/muews">
+          <li className="footer__li">
+          Search
+          </li></a>
         </ul>
       </nav>
     </div>

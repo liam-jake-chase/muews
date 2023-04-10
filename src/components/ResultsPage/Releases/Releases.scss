@@ -19,8 +19,11 @@
 
   &__header-two {
     color: whitesmoke;
-    position: fixed;
+    position: relative;
     width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1rem;
   }
 
   &__container {
@@ -48,14 +51,15 @@
     @include desktop {
       height: auto;
       width: 28rem;
-      top: 6.55rem;
-
+      top: 2rem;
       position: relative;
     }
   }
 
   &__flex-three {
     width: 33%;
+    height: 100vh;
+    overflow-x: auto;
   }
 
   &__title:hover {
@@ -86,12 +90,14 @@
     @include desktop {
       color: whitesmoke;
       text-align: left;
-      width: 31.5%;
-      height: 100%;
-      margin-left: 1rem;
-      margin-top: 7%;
-      position: fixed;
-      font-size: 0.65rem;
+      position: relative;
+      top: 1.5rem;
+      height: 80vh;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+      height: 100vh;
+      font-size: 0.8rem;
     }
   }
 }

@@ -9,7 +9,6 @@
       width: 100%;
       border-bottom-left-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
-      // opacity: 80%;
       height: 4.5rem;
     }
   }
@@ -24,24 +23,27 @@
     }
   }
 
-  &__li {
+  &__link {
     @include desktop {
       border: solid 1px whitesmoke;
       border-radius: 1rem;
       padding: 1rem 6%;
       text-decoration: none;
-
       &:hover {
         background-color: lightblue;
+        color: navy;
       }
     }
   }
-
 }
 
 a {
   text-decoration: none;
+  color: lightblue;
   &:visited {
-    color: rgb(43, 43, 139);
+    color: lightblue;
+  }
+  &:hover {
+    color: navy;
   }
 }
