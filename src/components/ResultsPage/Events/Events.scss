@@ -82,6 +82,12 @@ body {
     padding: 2rem 6rem;
     background-color: rgb(30, 30, 129);
     border-radius: 1rem;
+
+    &:hover {
+      background-color: rgb(30, 30, 129);
+      opacity: 70%;
+      color: lightblue;
+    }
   }
   &__flex-two {
     width: 70%;
