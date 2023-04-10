@@ -8,6 +8,7 @@ export default function Releases(props) {
   const [albumID, setAlbumID] = useState(undefined);
   const [albumImage, setAlbumImage] = useState(undefined);
   const [albumInfo, setAlbumInfo] = useState(undefined);
+  const [style, setStyle] = useState("arrow");
 
   useEffect(() => {
     axios
@@ -18,6 +19,29 @@ export default function Releases(props) {
         setAlbumInfo(response.data.album[0].strDescriptionEN);
       });
   });
+
+  let description =
+    albumInfo === undefined ? (
+      <p className="releases__noInfo">No Information Available</p>
+    ) : (
+      albumInfo
+    );
+  let setImage =
+    albumImage === undefined ? (
+      <p className="releases__noInfo releases__noInfo__album-cover">
+        Please select an album!
+      </p>
+    ) : (
+      albumImage && (
+        <p hidden className="releases__noInfo releases__noInfo__album-cover">
+          Please click on an album!
+        </p>
+      )
+    );
+
+  const changeStyle = () => {
+    setStyle("arrow-hidden");
+  };
 
   return (
     <>
@@ -35,7 +59,7 @@ export default function Releases(props) {
             <h2 className="releases__header">Album</h2>
             {props.artistReleases.map((albumTitle, index) => {
               return (
-                <li>
+                <li onClick={changeStyle}>
                   <button
                     id="button"
                     className="releases__title"
@@ -55,6 +79,14 @@ export default function Releases(props) {
           </div>
           <div className="releases__flex-two">
             <h2 className="releases__header-two">Album Cover</h2>
+            <div className="releases__flex-arrow">
+              <div className={style}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div className="releases__setImage">{setImage}</div>
+            </div>
             <img
               className="releases__image-thumb"
               src={albumImage}
@@ -65,7 +97,7 @@ export default function Releases(props) {
           <div className="releases__flex-three">
             <div className="releases__container-two">
               <h2 className="releases__header-two">Description</h2>
-              <p className="releases__description">{albumInfo}</p>
+              <p className="releases__description">{description}</p>
             </div>
           </div>
         </div>

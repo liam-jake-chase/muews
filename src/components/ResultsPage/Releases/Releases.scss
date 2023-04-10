@@ -23,7 +23,7 @@
     width: 33%;
     margin-left: auto;
     margin-right: auto;
-    top: 1rem;
+    top: 1rem;    
   }
 
   &__container {
@@ -47,6 +47,12 @@
     width: 33%;
   }
 
+  &__flex-arrow {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+
   &__image-thumb {
     @include desktop {
       height: auto;
@@ -60,6 +66,17 @@
     width: 33%;
     height: 100vh;
     overflow-x: auto;
+  }
+
+  &__noInfo {
+    text-align: center;
+    color: whitesmoke;    
+    position: relative;
+    font-size: 1.5rem;
+    &__album-cover {
+      
+      font-size: 1.5rem;
+    }
   }
 
   &__title:hover {
@@ -109,4 +126,49 @@
 
 a:visited {
   background-color: black;
+}
+
+.arrow-hidden {
+  display: none;
+}
+
+
+.arrow {
+  display: initial;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+  }
 }

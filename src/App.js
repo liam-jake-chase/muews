@@ -23,7 +23,6 @@ function App() {
   const [noData, setNoData] = useState(null);
   const [social, setSocial] = useState([]);
 
-
   const openModal = () => {
     setVisible(true);
   };
@@ -52,7 +51,11 @@ function App() {
             .get(`https://theaudiodb.com/api/v1/json/523532/album.php?i=${num}`)
             .then((response) => {
               console.log(response);
-              setArtistReleases(response.data.album);
+              if (response.data.album.strDescriptionEN === null) {
+                setNoData("No Information Available");
+              } else {
+                setArtistReleases(response.data.album);
+              }
               let getVideo = async () => {
                 await axios
                   .get(
@@ -106,7 +109,7 @@ function App() {
       .then((response) => {
         console.log(response.data._embedded.events);
         if (response.data.length === 0) {
-          setNoData("No Event Listings");
+          setNoData("No Information Available");
         } else {
           setEvent(response.data._embedded.events);
         }
@@ -132,8 +135,8 @@ function App() {
           <div className="modal">
             <h1>Sorry!</h1>
             <h3>
-              We were unable to get enough data for this musician or it was spelled incorrectly, please search
-              again!
+              We were unable to get enough data for this musician or it was
+              spelled incorrectly, please search again!
             </h3>
             <Link
               to="/muews"
@@ -172,6 +175,7 @@ function App() {
               <Releases
                 artistInfo={artistInfo}
                 artistReleases={artistReleases}
+                noData={noData}
               />
             }
           />
@@ -192,7 +196,13 @@ function App() {
           <Route
             exact
             path="/social"
-            element={<Social artistInfo={artistInfo} social={social} searchName={searchName}/>}
+            element={
+              <Social
+                artistInfo={artistInfo}
+                social={social}
+                searchName={searchName}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>
