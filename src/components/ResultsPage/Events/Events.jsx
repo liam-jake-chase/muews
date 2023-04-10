@@ -3,6 +3,7 @@ import FooterNav from "../FooterNav/FooterNav";
 import "./Events.scss";
 
 export default function Events(props) {
+  console.log();
   return (
     <>
       <section className="events">
@@ -15,7 +16,7 @@ export default function Events(props) {
         </div>
         <h1 className="events__header">EVENTS</h1>
         <div className="events__container">
-        <h2 className="events__noData">{props.noData}</h2>
+          <h2 className="events__noData">{props.noData}</h2>
           <div className="events__flex-one">
             <h3 className="events__title-header events__font">Start Date:</h3>
 
@@ -33,13 +34,6 @@ export default function Events(props) {
 
             <h4 className="events__title-header events__font">Price Range:</h4>
             {props.event.map((price) => {
-              if (!props.event[0].priceRange) {
-                return (
-                  <h4 className="events__title events__title__cancelled">
-                    Currency Not Available - Cancelled
-                  </h4>
-                );
-              }
               return (
                 <li className="events__item">
                   {price.priceRanges[0].currency}
@@ -47,20 +41,12 @@ export default function Events(props) {
               );
             })}
             {props.event.map((range) => {
-              if (!props.event[0].priceRange) {
-                return (
-                  <h4 className="events__title events__title__cancelled">
-                    Pricing Not Available - Cancelled
-                  </h4>
-                );
-              } else {
-                return (
-                  <li className="events__item">
-                    ${range.priceRanges[0].min}
-                    <span> - ${range.priceRanges[0].max}</span>
-                  </li>
-                );
-              }
+              return (
+                <li className="events__item">
+                  ${range.priceRanges[0].min}
+                  <span> - ${range.priceRanges[0].max}</span>
+                </li>
+              );
             })}
             <h5 className="events__title-header events__font">Venue:</h5>
             {props.event.map((venue) => {
@@ -76,13 +62,6 @@ export default function Events(props) {
             })}
             <h6 className="events__title-header events__font">Tickets:</h6>
             {props.event.map((tickets) => {
-              if (!props.event[0].priceRange) {
-                return (
-                  <button className="events__item-tickets" disabled>
-                    Not Available
-                  </button>
-                );
-              }
               return (
                 <button
                   onClick={() => {
