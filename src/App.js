@@ -37,7 +37,6 @@ function App() {
         `https://www.theaudiodb.com/api/v1/json/523532/search.php?s=${searchName}`
       )
       .then((response) => {
-        console.log(response);
         if (response.data.artists === null) {
           setRedirect(false);
           openModal();
@@ -91,8 +90,6 @@ function App() {
           await axios
             .get(`https://api.discogs.com/artists/${artistName}`, access)
             .then((response) => {
-              console.log(response.data);
-              console.log(response.data.members);
               setDiscogs(response.data.members);
               setSocial(response.data.urls);
             });
@@ -107,12 +104,7 @@ function App() {
         `https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=2mitntFIkOiRSejzvu3iHKjtOC6AiuyB&keyword=${searchName}`
       )
       .then((response) => {
-        console.log(response.data._embedded.events);
-        if (response.data.length === 0) {
-          setNoData("No Information Available");
-        } else {
-          setEvent(response.data._embedded.events);
-        }
+        setEvent(response.data._embedded.events);
       });
   };
 
@@ -190,7 +182,7 @@ function App() {
             exact
             path="/media"
             element={
-              <Media artistInfo={artistInfo} artistVideos={artistVideos} />
+              <Media artistInfo={artistInfo} artistVideos={artistVideos} searchName={searchName} />
             }
           />
           <Route

@@ -12,7 +12,7 @@ export default function Releases(props) {
 
   useEffect(() => {
     axios
-      .get(`https://theaudiodb.com/api/v1/json/2/album.php?m=${albumID}`)
+      .get(`https://theaudiodb.com/api/v1/json/523532/album.php?m=${albumID}`)
       .then((response) => {
         console.log(response.data.album[0].strAlbumThumb);
         setAlbumImage(response.data.album[0].strAlbumThumb);

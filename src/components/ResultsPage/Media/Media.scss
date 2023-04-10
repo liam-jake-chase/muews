@@ -21,6 +21,10 @@
     }
   }
 
+  &__hidden {
+    display: none;
+  }
+
   &__container {
     display: flex;
     justify-content: space-evenly;
@@ -57,6 +61,10 @@
   &__videoitem {
     @include desktop {
       flex-basis: 25%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
       border: 1px solid white;
       border-radius: 1rem;
       padding: 1rem 0;
@@ -68,7 +76,15 @@
     }
   }
   &__thumb {
-    height: 10rem;
+    height: 8rem;
+    margin:auto;
+  }
+
+  &__text {
+    text-align: center;
+    margin: auto;
+    width: 10rem;
+    font-size: .6rem;
   }
 }
 
