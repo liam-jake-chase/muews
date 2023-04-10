@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     gap: 5rem;
+    margin-top: 2.5rem;
   }
 
   &__image-thumb {
@@ -73,8 +74,10 @@
     color: whitesmoke;    
     position: relative;
     font-size: 1.5rem;
-    &__album-cover {
-      
+    &__description {
+      top: 1rem;
+    }
+    &__album-cover {      
       font-size: 1.5rem;
     }
   }
@@ -142,8 +145,8 @@ a:visited {
 
 .arrow span {
   display: block;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 1vw;
+  height: 1vw;
   border-bottom: 5px solid white;
   border-right: 5px solid white;
   transform: rotate(45deg);

@@ -22,7 +22,9 @@ export default function Releases(props) {
 
   let description =
     albumInfo === undefined ? (
-      <p className="releases__noInfo">No Information Available</p>
+      <p className="releases__noInfo releases__noInfo__description">
+        No Information Available
+      </p>
     ) : (
       albumInfo
     );
