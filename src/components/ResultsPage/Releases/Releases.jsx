@@ -104,10 +104,8 @@ export default function Releases(props) {
             </div>
 
             <div className="releases__flex-three">
-              <div className="releases__container-two">
-                <h2 className="releases__header-two">Description</h2>
-                <p className="releases__description">{description}</p>
-              </div>
+              <h2 className="releases__header-two">Description</h2>
+              <p className="releases__description">{description}</p>
             </div>
           </div>
         </div>
