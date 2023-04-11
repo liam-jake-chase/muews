@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/muews/static/css/main.a349d854.css",
+    "main.css": "/muews/static/css/main.f0f4ca37.css",
     "main.js": "/muews/static/js/main.2834c234.js",
     "static/js/787.86c2cee3.chunk.js": "/muews/static/js/787.86c2cee3.chunk.js",
     "static/media/Logo-movie-wide-two.gif": "/muews/static/media/Logo-movie-wide-two.7a1c33c5dfd92922aada.gif",
@@ -10,12 +10,12 @@
     "static/media/Icon-instagram.svg": "/muews/static/media/Icon-instagram.eb357a6102d36ed114b9275a65f1e2e8.svg",
     "static/media/Icon-facebook.svg": "/muews/static/media/Icon-facebook.18f044eb68ec678eac1c626136cad978.svg",
     "index.html": "/muews/index.html",
-    "main.a349d854.css.map": "/muews/static/css/main.a349d854.css.map",
+    "main.f0f4ca37.css.map": "/muews/static/css/main.f0f4ca37.css.map",
     "main.2834c234.js.map": "/muews/static/js/main.2834c234.js.map",
     "787.86c2cee3.chunk.js.map": "/muews/static/js/787.86c2cee3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a349d854.css",
+    "static/css/main.f0f4ca37.css",
     "static/js/main.2834c234.js"
   ]
 }
