@@ -1,29 +1,42 @@
 import React from "react";
-import { Link } from "react-admin";
 import { slide as Menu } from "react-burger-menu";
+import { Link } from "react-admin";
 import "./Sidebar.scss";
 
 export default function Sidebar(props) {
-  const showSettings = (e) => {
-    e.preventDefault();
-  };
   return (
     <>
       <Menu>
         <p>MENU</p>
-        <Link id="home" className="menu-item" to="/muews">
+        <div className="menu-item">
+          <Link id="about" className="menu-item" to="/profile">
+            Profile
+          </Link>
+        </div>
+        <div className="menu-item">
+          <Link id="contact" className="menu-item" to="/releases">
+            Releases
+          </Link>
+        </div>
+        <div className="menu-item">
+          <Link id="contact" className="menu-item" to="/events">
+            Events
+          </Link>
+        </div>
+        <div className="menu-item">
+          <Link id="contact" className="menu-item" to="/gallery">
+            Gallery
+          </Link>
+        </div>
+        <div className="menu-item">
+          <Link id="contact" className="menu-item" to="/media">
+            Media
+          </Link>
+        </div>
+
+        <a id="home" className="menu-item" href="/muews">
           Search
-        </Link>
-        <Link id="about" className="menu-item" href="/about">
-          Profile
-        </Link>
-        <Link id="contact" className="menu-item" href="/contact">
-          Releases
-        </Link>
-        <br></br>
-        <Link onClick={showSettings} className="menu-item--small" href="">
-          Settings
-        </Link>
+        </a>
       </Menu>
     </>
   );

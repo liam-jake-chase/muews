@@ -107,6 +107,7 @@ function App() {
         `https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=2mitntFIkOiRSejzvu3iHKjtOC6AiuyB&keyword=${searchName}`
       )
       .then((response) => {
+        console.log(response.data)
         setEvent(response.data._embedded.events);
       });
   };

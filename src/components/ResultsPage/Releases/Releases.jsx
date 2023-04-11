@@ -3,6 +3,7 @@ import "./Releases.scss";
 import FooterNav from "../FooterNav/FooterNav";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function Releases(props) {
   const [albumID, setAlbumID] = useState(undefined);
@@ -55,6 +56,7 @@ export default function Releases(props) {
             alt="main-banner"
           />
         </div>
+        <Sidebar />
         <h1 className="releases__header">RELEASES</h1>
         <div className="releases__container">
           <div className="releases__flex-one active">
@@ -83,27 +85,29 @@ export default function Releases(props) {
               })}
             </ul>
           </div>
-          <div className="releases__flex-two">
-            <h2 className="releases__header-two">Album Cover</h2>
-            <div className="releases__flex-arrow">
-              <div className={style}>
-                <span></span>
-                <span></span>
-                <span></span>
+          <div className="releases__flex__mobile">
+            <div className="releases__flex-two">
+              <h2 className="releases__header-two">Album Cover</h2>
+              <div className="releases__flex-arrow">
+                <div className={style}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className="releases__setImage">{setImage}</div>
               </div>
-              <div className="releases__setImage">{setImage}</div>
+              <img
+                className="releases__image-thumb"
+                src={albumImage}
+                alt={albumID}
+              />
             </div>
-            <img
-              className="releases__image-thumb"
-              src={albumImage}
-              alt={albumID}
-            />
-          </div>
 
-          <div className="releases__flex-three">
-            <div className="releases__container-two">
-              <h2 className="releases__header-two">Description</h2>
-              <p className="releases__description">{description}</p>
+            <div className="releases__flex-three">
+              <div className="releases__container-two">
+                <h2 className="releases__header-two">Description</h2>
+                <p className="releases__description">{description}</p>
+              </div>
             </div>
           </div>
         </div>

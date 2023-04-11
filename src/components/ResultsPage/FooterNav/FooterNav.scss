@@ -2,6 +2,10 @@
 
 .footer {
   &__nav {
+    @include mobile {
+      display:none;
+    }
+    
     background-color: black;
     @include desktop {
       position: absolute;
