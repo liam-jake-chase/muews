@@ -176,11 +176,18 @@ body {
     }
 
     &__header-two {
-      color: whitesmoke;
-      margin: 0;
-      margin-top: 1rem;
-      &__biography {
-        margin-top: 1.5rem;
+      @include mobile {
+        font-size: 1rem;
+        color: whitesmoke;
+        margin: 0;
+        margin-top: 1rem;
+        &__biography {
+          margin-top: 1.5rem;
+        }
+      }
+
+      @include tablet {
+        font-size: 1.25rem;
       }
     }
   }

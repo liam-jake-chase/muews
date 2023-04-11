@@ -40,11 +40,32 @@ html {
 }
 
 .modal {
-  height: 22vh;
-  width: 30vw;
+  /* height: 22vh;
+  width: 30vw; */
   background-color: #282c34;
   color: whitesmoke;
   border-radius: 1rem;
+}
+
+@media only screen and (min-width: 320px) {
+  .modal {
+    width: 60vw;
+    height: 35vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 40vw;
+    height: 27vh;
+  }
+}
+
+@media only screen and (min-width: 1268px) {
+  .modal {
+    width: 50vw;
+    height: 22vh;
+  }
 }
 
 .modal__button {
@@ -53,19 +74,22 @@ html {
   border: solid 1px whitesmoke;
   border-radius: 1rem;
   margin-top: 1rem;
-  padding: .5rem 6%;
+  padding: 0.5rem 6%;
   text-decoration: none;
 }
 
 .modal > h1 {
   background-color: #282c34;
-  margin-top:0;
+  margin-top: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 
 .modal > h3 {
   margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
 .modal__button:hover {
