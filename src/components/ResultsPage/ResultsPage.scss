@@ -70,6 +70,7 @@ body {
         font-size: 80%;
         width: 75%;
         height: 20%;
+        padding-bottom: 0;
       }
     }
 
@@ -111,7 +112,7 @@ body {
       @include desktop {
         flex-direction: row;
         margin-bottom: 0;
-        justify-content: space-evenly;
+       
         gap: 2rem;
       }
     }
