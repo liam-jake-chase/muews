@@ -1,6 +1,8 @@
 import React from "react";
 import "./ResultsPage.scss";
 import FooterNav from "./FooterNav/FooterNav";
+import Sidebar from "./Sidebar/Sidebar";
+
 
 export default function ResultsPage(props) {
   return (
@@ -15,7 +17,10 @@ export default function ResultsPage(props) {
         </div>
         <div className="results__tabs-card-container">
           <div className="profile">
-            <h1 className="profile__header">PROFILE</h1>
+            <div className="profile__header-container">
+              <Sidebar />
+              <h1 className="profile__header">PROFILE</h1>
+            </div>
             <div className="profile__container-one">
               <h2 className="profile__header-two profile__header-two__biography">
                 BIOGRAPHY
