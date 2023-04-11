@@ -22,6 +22,11 @@ export default function FooterNav() {
               Events
           </li>
             </Link>
+            <Link className="footer__link" to="/gallery">
+          <li className="footer__li">
+              Gallery
+          </li>
+            </Link>
             <Link className="footer__link" to="/media">
           <li className="footer__li">
               Media

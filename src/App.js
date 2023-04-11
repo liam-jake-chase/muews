@@ -10,6 +10,7 @@ import "./components/ResultsPage/ResultsPage.scss";
 import Events from "./components/ResultsPage/Events/Events";
 import Social from "./components/ResultsPage/Social/Social";
 import Media from "./components/ResultsPage/Media/Media";
+import Gallery from "./components/ResultsPage/Gallery/Gallery";
 
 function App() {
   const [redirect, setRedirect] = useState(false);
@@ -22,6 +23,7 @@ function App() {
   const [discogs, setDiscogs] = useState([]);
   const [noData, setNoData] = useState(null);
   const [social, setSocial] = useState([]);
+  const [images, setImages] = useState([]);
 
   const openModal = () => {
     setVisible(true);
@@ -75,8 +77,7 @@ function App() {
 
   const access = {
     headers: {
-      Authorization:
-        "Discogs key=trndaRvgxPZeVGxKzXuo, secret=EfhONQaxMVYqTPCgrxkmCCmTJbVkLsjU",
+      Authorization: "Discogs token=xjzQTJrmKsrHlIVuXumMbGcqfPfLyYicQRqGDrvo",
     },
   };
   let getDiscogs = async () => {
@@ -90,6 +91,8 @@ function App() {
           await axios
             .get(`https://api.discogs.com/artists/${artistName}`, access)
             .then((response) => {
+              console.log(response.data);
+              setImages(response.data.images)
               setDiscogs(response.data.members);
               setSocial(response.data.urls);
             });
@@ -157,7 +160,13 @@ function App() {
           />
           <Route
             path="/profile"
-            element={<ResultsPage artistInfo={artistInfo} discogs={discogs} />}
+            element={
+              <ResultsPage
+                artistInfo={artistInfo}
+                discogs={discogs}
+                searchName={searchName}
+              />
+            }
           />
 
           <Route
@@ -178,11 +187,22 @@ function App() {
               <Events artistInfo={artistInfo} noData={noData} event={event} />
             }
           />
+           <Route
+            exact
+            path="/gallery"
+            element={
+              <Gallery artistInfo={artistInfo} images={images} />
+            }
+          />
           <Route
             exact
             path="/media"
             element={
-              <Media artistInfo={artistInfo} artistVideos={artistVideos} searchName={searchName} />
+              <Media
+                artistInfo={artistInfo}
+                artistVideos={artistVideos}
+                searchName={searchName}
+              />
             }
           />
           <Route

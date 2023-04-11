@@ -1,0 +1,42 @@
+@import "../../../partials/mixins";
+
+.gallery {
+  &__banner-container {
+    width: 100%;
+    border-bottom: solid 1px white;
+  }
+
+  &__banner {
+    height: auto;
+    width: 50%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+
+  &__header {
+    @include desktop {
+      margin: 0.75rem 0 1rem 0;
+      color: whitesmoke;
+      font-size: 2rem;
+    }
+  }
+
+  &__container { 
+    border-top: solid 1px white;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-left: auto;
+    justify-content: center;
+    
+  }
+
+  &__image {
+    height: 13rem;
+    border-radius: .5rem;
+  }
+}
