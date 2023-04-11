@@ -18,7 +18,7 @@ body {
       height: 3rem;
       border: lightblue solid 0.25rem;
       opacity: 0.8;
-      border-radius: 1rem;      
+      border-radius: 1rem;
       text-align: center;
     }
 
@@ -39,10 +39,10 @@ body {
 
   &__image {
     @include mobile {
-     position: relative;
-     height: 2rem;
-     top: 1.5rem;
-     margin: auto;
+      position: relative;
+      height: 2rem;
+      top: 1.5rem;
+      margin: auto;
     }
 
     @include tablet {
@@ -52,12 +52,11 @@ body {
     @include desktop {
       position: relative;
       top: 10.5rem;
-      height: 7rem
+      height: 7rem;
     }
   }
 
   &__video {
-
     @include mobile {
       position: relative;
       height: 15vh;
