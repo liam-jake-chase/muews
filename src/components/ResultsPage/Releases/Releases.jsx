@@ -85,7 +85,7 @@ export default function Releases(props) {
               })}
             </ul>
           </div>
-          <div className="releases__flex__mobile">
+          <div className="releases__flex-mobile">
             <div className="releases__flex-two">
               <h2 className="releases__header-two">Album Cover</h2>
               <div className="releases__flex-arrow">
