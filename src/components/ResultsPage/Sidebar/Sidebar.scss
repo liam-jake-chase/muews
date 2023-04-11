@@ -1,3 +1,5 @@
+@import "../../../partials/mixins";
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -5,11 +7,19 @@
   height: 1.5rem;
   left: 1.5rem;
   top: 5.3rem;
+
+  @include tablet {
+    display: none;
+  }
+  
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #3f4979;
+  @include tablet {
+    display: hidden;
+  }
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -21,6 +31,9 @@
 .bm-cross-button {
   height: 24px;
   width: 24px;
+  @include tablet {
+    display: hidden;
+  }
 }
 
 /* Color/shape of close button cross */

@@ -46,9 +46,6 @@ body {
     flex-direction: column;
     overflow-x: auto;
 
-    @include mobile {
-    }
-
     ::-webkit-scrollbar {
       width: 0;
       background: transparent;
@@ -99,7 +96,6 @@ body {
       }
       @include desktop {
         flex-direction: row;
-        
       }
     }
 
@@ -133,23 +129,6 @@ body {
       @include desktop {
       }
     }
-
-    // &__imagelist {
-    //   @include mobile {
-    //     display: flex;
-    //     flex-direction: column;
-    //     margin: auto;
-    //     gap: 2rem;
-    //     padding: 0;
-    //   }
-    //   @include desktop {
-    //     flex-direction: row;
-    //     justify-content: space-around;
-    //     margin-top: 3rem;
-    //     margin-left: 1rem;
-    //     flex-basis: 5rem;
-    //   }
-    // }
 
     &__image {
       @include mobile {
