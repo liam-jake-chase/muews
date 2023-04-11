@@ -1,3 +1,5 @@
+@import "./../../partials/mixins";
+
 html,
 body {
   background-image: url("./../../assets/images/hero-image2.jpg");
@@ -5,21 +7,64 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
   &__search {
-    width: 28%;
-    height: 3rem;
-    border: lightblue solid 0.25rem;
-    opacity: 0.8;
-    border-radius: 1rem;
-    font-size: large;
-    text-align: center;
+    @include mobile {
+      width: 80%;
+      height: 3rem;
+      border: lightblue solid 0.25rem;
+      opacity: 0.8;
+      border-radius: 1rem;      
+      text-align: center;
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      width: 35%;
+      height: 3rem;
+      border: lightblue solid 0.25rem;
+      opacity: 0.8;
+      border-radius: 1rem;
+      font-size: large;
+      text-align: center;
+    }
   }
 
   &__image {
-    position: relative;
-    top: 15.5rem;
+    @include mobile {
+     position: relative;
+     height: 2rem;
+     top: 1.5rem;
+     margin: auto;
+    }
+
+    @include tablet {
+      height: 4rem;
+    }
+
+    @include desktop {
+      position: relative;
+      top: 10.5rem;
+      height: 7rem
+    }
+  }
+
+  &__video {
+
+    @include mobile {
+      position: relative;
+      height: 15vh;
+    }
+
+    @include tablet {
+      height: 22rem;
+    }
   }
 }

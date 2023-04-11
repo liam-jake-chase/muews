@@ -43,9 +43,7 @@ body {
     &__container-one {
       border-top: solid 1px white;
       width: 100%;
-      display:flex;
-      flex-direction: column;
-      text-align: center;
+     
     }
 
     &__biography {
@@ -55,7 +53,7 @@ body {
       margin: 1rem 0.5rem 1rem 0.5rem;
 
       @include desktop {
-        margin: 3vrem auto 0 auto;
+        margin: 1rem auto 0 auto;
         font-size: 80%;
         width: 80%;
         height: 30%;
@@ -100,8 +98,8 @@ body {
       @include desktop {
         display: flex;
         flex-direction: row;
-        gap: 1rem;
-        margin-top: 1rem;
+        justify-content: space-around;
+        margin-top: 3rem;
         margin-left: 1rem;
         flex-basis: 5rem;
       }
@@ -111,7 +109,7 @@ body {
       @include desktop {
         height: 13rem;
         border-radius: 0.5rem;
-        max-width: 10rem;
+        max-width: 13rem;
       }
     }
 
@@ -126,25 +124,10 @@ body {
     &__header-two {
       color: whitesmoke;
       margin: 0;
-      
+      margin-top: 1rem;
       &__biography {
-        width: 40%;
-        text-align: center;
-        position: relative;
-        top: 2rem;
+        margin-top: 1.5rem;
       }
-    }
-
-    &__container {
-      display: flex;
-      top: 5rem;
-    }
-
-    &__gallery {
-      height: 10rem;
-      width: 15rem;
-      
-     
     }
   }
 }
